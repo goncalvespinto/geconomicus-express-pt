@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        Geconomicus Express Online
+        Geconomicus Express Online PT
     </header>
 
 
@@ -20,7 +20,7 @@
         </div>
         <div style="flex:auto; width:300px;">
             <div id="rappel_dette" style="display: block">
-                <h2>Partie en monnaie dette</h2>
+                <h2>Jogo em Moeda Dívida</h2>
 
                 Prix des cartes :
 
@@ -31,15 +31,15 @@
                     <li id="prix_dette_3" class="level3">16</li>
                 </ul>
 
-                <p>Crédit : on emprunte 3 et on doit rendre 4 au bout de 4 minutes. Si on ne peut pas rembourser au bout du temps imparti, l'intérêt est perçu et le crédit est relancé.</p>
-                <p>Courtier : joue pour la banque. Il reçoit les intérêts gagnés par la banque et les hypothèques.</p>
+                <p>Crédito: pedimos 3 emprestados e devemos devolver 4 após 4 minutos. Se não pudermos reembolsar após o tempo dado, serão cobrados juros e o crédito será relançado.</p>
+                <p>Corretor: joga pelo banco. Ele recebe os juros e as hipotecas ganhos pelo banco.</p>
 
             </div>
             <div id="rappel_libre" style="display:none">
-                <h2>Partie en monnaie libre</h2>
+                <h2>Jogo em Moeda Livre</h2>
 
-                Prix des cartes :
-
+               Preço das cartas :
+                
                 <ul>
                     <li id="prix_libre_0" class="level0">6</li>
                     <li id="prix_libre_1" class="level1">12</li>
@@ -48,12 +48,12 @@
                 </ul>
 
                 <h4>
-                    Tour numéro : <b id="nb_tours">1</b><br>
-                    Masse Monétaire : <b id="masse_monetaire">0</b> Sous<br>
-                    Dividende Universel : <b id="dividende_universel">8</b> Sous
+                    Jogada numéro : <b id="nb_tours">1</b><br>
+                    Massa Monetária : <b id="masse_monetaire">0</b> Sous<br>
+                    Dividendo Universal : <b id="dividende_universel">8</b> Sous
                 </h4>
                 
-                Réévaluation du Dividende Universel : toutes les 4 minutes votre solde est réévalué selon la formule suivante : Nouveau solde = Ancien solde/2 + 8 (en arrondissant à l'unité)
+                Reavaliação do Dividendo Universal : a cada 4 voltas o D.U. é reavaliado segundo a fórmula seguinte : Nov Saldo = Antigo saldo/2 + 8 (arredondado à unidade)
                 <!--
                 <p>Réévaluation du Dividende Universel : tous les 4 tours le D.U. est réévalué selon la formule suivante : Nouveau&nbsp;D.U. = Ancien&nbsp;D.U.&nbsp;+&nbsp;0,0488²&nbsp;*&nbsp;(Masse&nbsp;Monétaire&nbsp;/&nbsp;Joueurs)&nbsp;/&nbsp;2 (en arrondissant à l'unité)</p>
                 <p>Réévaluation du Solde : toutes les 4 minutes votre solde est réévalué selon la formule suivante : Nouveau&nbsp;solde = Ancien&nbsp;solde&nbsp;+&nbsp;1&nbsp;D.U.</p>
@@ -62,16 +62,16 @@
         </div>
         <div id="score_div" style="flex:auto">
             <textarea id="chat" rows="10" cols="50">
-            --- Chat général ---
+            --- Chat geral ---
             </textarea>
             <br>
             <br>
             <input id="message" type="text">
-            <button onclick="envoyer_message()">Envoyer message</button>
+            <button onclick="envoyer_message()">Enviar mensagem</button>
             <br>
             <br>
             <textarea id="chat2" rows="20" cols="50">
-            --- Debugage ---
+            --- Painel de Debug ---
                 </textarea>
             
         </div>
@@ -83,13 +83,13 @@
 
     <div id="server_id" style="display:inline; font-weight: bold; color:grey" title="Copy this ID to the input on send.html.">Mon ID :</div>
 
-    <span style="font-weight: bold">ID à rejoindre : </span>
+    <span style="font-weight: bold">ID para se juntar : </span>
     <input type="text" id="join_id" title="Input the ID from receive.html">
-    <button id="connect_button" onclick="join_server()">Rejoindre</button>
+    <button id="connect_button" onclick="join_server()">Juntar-se</button>
     <span style="font-weight: bold">Pseudo : </span>
     <input type="text" id="pseudo">
-    <button id="change_pseudo" onclick="change_pseudo()">Valider</button>
-    <button onclick="print_peers()">Peers</button>
+    <button id="change_pseudo" onclick="change_pseudo()">Validar</button>
+    <button onclick="print_peers()">Jogadores</button>
 
     <textarea id="chat3" rows="20" cols="50">
     </textarea>
@@ -100,42 +100,43 @@
     </div>
     <br>
     <br>
-    <button onclick="play_dette()">Lancer partie monnaie dette</button>
-    <button onclick="play_libre()">Lancer partie monnaie libre</button><br>
+    <button onclick="play_dette()">Iniciar jogo em moeda dívida</button>
+    <button onclick="play_libre()"Iniciar jogo em moeda livre</button><br>
 
     <div id="menu" class="menu">
         <ul class="menu-options">
-            <li class="menu-option" onclick="demander_credit()">Demander un crédit</li>
-            <li class="menu-option" onclick="rembourser_credit()">Rembourser un crédit</li>
-            <li class="menu-option" onclick="devenir_courtier()">Devenir courtier</li>
+            <li class="menu-option" onclick="demander_credit()">Pedir um crédito</li>
+            <li class="menu-option" onclick="rembourser_credit()">Reembolsar um crédito</li>
+            <li class="menu-option" onclick="devenir_courtier()">Tornar-se corretor</li>
         </ul>
     </div>
 
     <div id="aide">
         <h2>Aide</h2>
 
-        <h4>Se déplacer et parler</h4>
-        <p>Pour se déplacer et parler aux autres joueurs utiliser les touches z, q, s et d ou se déplacer avec la souris en cliquant vers l'endroit où on veut aller.
-            En se rapprochant des autres joueurs (il faut que l'autre soit dans le cercle autour de soi), le son se lancera automatiquement et vous pourrez parler avec la personne.
-            En s'éloignant suffisamment le micro se coupe.</p>
+        <h4>Movimentar-se e falar</h4>
+        <p>Para se movimentar e falar com os outros jogadores utilizar as teclas z, q, s et d.
+            Ao se aproximar de outros jogadores, o microfone irá ligar-se automaticamente e você poderá falar com ele.
+            Movendo-se para longe o suficiente, o microfone desligar-se-á.</p>
 
-        <h4>Échanger une carte</h4>
-        <p>Pour échanger une carte, il suffit de faire clic gauche sur la carte en maintenant le clic et en déposant la carte sur l'avatar du joueur auquel on veut proposer la carte.
-            Une fois qu'il aura accepté l'offre, l'échange se fera : vous donnez la carte en échange de son prix.</p>
+        <h4>Trocar uma carta</h4>
+        <p>Para trocar uma carta, basta clicar com o botão esquerdo na carta, mantendo o clique e colocando a carta no avatar do jogador com quem deseja trocar a carta .
+            Assim que ele aceitar a oferta, a troca acontecerá: a carta será trocada pelo seu preço.</p>
 
-            <h4>Score</h4>
+            <h4>Pontuação</h4>
         <p>
-            Le score est calculé ainsi :
-            une carte rouge fait 1 point, une carte jaune 2, une carte verte 4 et une carte bleue 8.
-            Pour faire une carte de niveau supérieure il faut faire un carré de 4 fois la même lettre et de la même couleur.
-            Ainsi si vous n'avez pas de carré aller voir d'autres joueurs en leur demandant s'ils n'ont pas une carte qui vous intéresse pour compléter un carré.
+            A pontuação é calculada da seguinte forma :
+            uma carta vermelha vale 1 ponto, uma carta amarela 2, uma carta verde 4 e uma carta azul 8 .
+            Para conseguir uma carta de nível mais alto deves conseguir uma linha de 4 cartas com a mesma letra e a mesma cor .
+            Então, se não tiveres uma sequência, dirige-te até os outros jogadores e pergunta se eles não têm uma carta que te interesse para completares a linha .
+       
         </p>
 
-        <h4>Partie en monnaie dette</h4>
+        <h4>Jogo em moeda dívida</h4>
         <p>
-        Pour toute interaction avec la banque, on fait clic droit sur la banque.
-        Le remboursement des crédits se fait automatiquement au bout des 4 minutes.
-        Si vous n'avez pas assez de monnaie pour payer les intérêts (qui sont ici de 1 unité), alors la banque fera une saisie : elle prendre une carte rouge et le crédit sera relancé de 4 minutes.
+        Para qualquer interação com o banco, clicamos com o botão direito do rato no banco.
+         O reembolso dos créditos é feito automaticamente após 4 minutos.
+         Se não tiveres dinheiro suficiente para pagar os juros (que aqui são de 1 unidade), o banco fará uma apreensão: ser-te-á tirada uma carta vermelha e o crédito será reiniciado por 4 minutos .
         </p>
 
     </div>
