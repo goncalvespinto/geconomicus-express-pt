@@ -304,7 +304,7 @@ function gameLoop(ctx) {
     {
         ctx.font = "20px Arial"
         ctx.fillStyle = "black"
-        ctx.fillText("Prochaine réévaluation : " + get_time_left_before_reevaluation(), 0,30)
+        ctx.fillText("Próxima reavaliação : " + get_time_left_before_reevaluation(), 0,30)
 
         if ( get_time_left_before_reevaluation() < 0){
             game.start_time = get_current_time()
@@ -318,7 +318,7 @@ function gameLoop(ctx) {
         for (var i in my_credits){
             ctx.font = "16px Arial"
             ctx.fillStyle = "black"
-            ctx.fillText("Crédit à rembourser dans : " + get_time_left_credit(my_credits[i]) + "s", 0,30 + i*30)
+            ctx.fillText("Cédito a ser reembolsado em : " + get_time_left_credit(my_credits[i]) + "s", 0,30 + i*30)
 
             if (get_time_left_credit(my_credits[i]) < 0){
 
