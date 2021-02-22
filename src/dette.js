@@ -1,4 +1,4 @@
-
+m
 function hypothequer(card) {
     for (var c of connections) {
         if (c.is_courtier && c.open) {
@@ -28,7 +28,7 @@ function demander_credit() {
             }
         }
         if (!have_bank) {
-            add_info_text(canvas.width/2, canvas.height/2,100,100,"Aucun courtier!", false)
+            add_info_text(canvas.width/2, canvas.height/2,100,100,"Nenhum corretor definido!", false)
             return
         }
         my_credits.push(get_current_time())
@@ -49,12 +49,12 @@ function rembourser_credit() {
 
 function devenir_courtier() {
     if (peer.is_courtier) {
-        add_info_text(canvas.width/2, canvas.height/2,300,70,"Vous êtes déjà le courtier", false)
+        add_info_text(canvas.width/2, canvas.height/2,300,70,"Tu já és o corretor", false)
     }
     for (var c of connections) {
         if (c.open) {
             if (c.is_courtier == true) {
-                add_info_text(canvas.width/2, canvas.height/2,100,100,"Il y a déjà un courtier", false)
+                add_info_text(canvas.width/2, canvas.height/2,100,100,"Já existe um corretor!", false)
                 return
             }
         }
