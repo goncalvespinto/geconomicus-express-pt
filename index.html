@@ -53,7 +53,7 @@
                     Dividendo Universal : <b id="dividende_universel">8</b> Sous
                 </h4>
                 
-                Reavaliação do Dividendo Universal : a cada 4 voltas o D.U. é reavaliado segundo a fórmula seguinte : Nov Saldo = Antigo saldo/2 + 8 (arredondado à unidade)
+                Reavaliação do Dividendo Universal : a cada 4 voltas o D.U. é reavaliado segundo a fórmula seguinte : Novo Saldo = Antigo saldo/2 + 8 (arredondado à unidade)
                 <!--
                 <p>Réévaluation du Dividende Universel : tous les 4 tours le D.U. est réévalué selon la formule suivante : Nouveau&nbsp;D.U. = Ancien&nbsp;D.U.&nbsp;+&nbsp;0,0488²&nbsp;*&nbsp;(Masse&nbsp;Monétaire&nbsp;/&nbsp;Joueurs)&nbsp;/&nbsp;2 (en arrondissant à l'unité)</p>
                 <p>Réévaluation du Solde : toutes les 4 minutes votre solde est réévalué selon la formule suivante : Nouveau&nbsp;solde = Ancien&nbsp;solde&nbsp;+&nbsp;1&nbsp;D.U.</p>
@@ -85,11 +85,11 @@
 
     <span style="font-weight: bold">ID para se juntar : </span>
     <input type="text" id="join_id" title="Input the ID from receive.html">
-    <button id="connect_button" onclick="join_server()">Juntar-se</button>
-    <span style="font-weight: bold">Pseudo : </span>
+    <button id="connect_button" onclick="join_server()">Juntar</button>
+    <span style="font-weight: bold">Nome: </span>
     <input type="text" id="pseudo">
     <button id="change_pseudo" onclick="change_pseudo()">Validar</button>
-    <button onclick="print_peers()">Jogadores</button>
+    <button onclick="print_peers()">ver jogadores</button>
 
     <textarea id="chat3" rows="20" cols="50">
     </textarea>
@@ -101,7 +101,7 @@
     <br>
     <br>
     <button onclick="play_dette()">Iniciar jogo em moeda dívida</button>
-    <button onclick="play_libre()"Iniciar jogo em moeda livre</button><br>
+    <button onclick="play_libre()">Iniciar jogo em moeda livre</button><br>
 
     <div id="menu" class="menu">
         <ul class="menu-options">
@@ -112,7 +112,7 @@
     </div>
 
     <div id="aide">
-        <h2>Aide</h2>
+        <h2>Ajuda</h2>
 
         <h4>Movimentar-se e falar</h4>
         <p>Para se movimentar e falar com os outros jogadores utilizar as teclas z, q, s et d.
